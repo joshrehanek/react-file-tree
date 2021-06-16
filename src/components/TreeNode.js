@@ -10,7 +10,13 @@ const TreeNode = (props) => {
     const { node, getChildNodes, level } = props;
 
     return (
-        
+        <>
+            <div level={level} type={node.type}>
+                <div>
+                    {node.type === 'folder' && (node.isOpen ? <FaChevronDown /> : <FaChevronRight /> )}
+                </div>
+            </div>
+        </>
     )
 }
 
