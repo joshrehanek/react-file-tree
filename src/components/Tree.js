@@ -48,4 +48,11 @@ export default class Tree extends Component {
         nodes: data,
     };
 
+    getRootNodes = () => {
+        const { nodes } = this.state;
+        return values(nodes).filter(node => node.isRoot === true);
+    }
+
+    
+
 }
