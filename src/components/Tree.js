@@ -53,6 +53,10 @@ export default class Tree extends Component {
         return values(nodes).filter(node => node.isRoot === true);
     }
 
-    
+    getChildNodes = (node) => {
+        const { nodes } = this.state;
+        if (!node.children) return [];
+        return node.children.map(path => nodes[path]);
+    }
 
 }
