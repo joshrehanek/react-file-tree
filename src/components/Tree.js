@@ -14,10 +14,10 @@ const data = {
       type: 'folder',
       children: ['/root/josh/readme.md'],
     },
-    '/root/david/readme.md': {
-      path: '/root/david/readme.md',
+    '/root/josh/readme.md': {
+      path: '/root/josh/readme.md',
       type: 'file',
-      content: 'Thanks for reading me me. But there is nothing here.'
+      content: 'File Content goes here.'
     },
     '/root/jsrehanek': {
       path: '/root/jsrehanek',
@@ -42,10 +42,10 @@ const data = {
   };
   
 
-export default function Tree() {
-    return (
-        <div>
-            
-        </div>
-    )
+export default class Tree extends Component {
+  
+    state = {
+        nodes: data,
+    };
+
 }
