@@ -6,12 +6,12 @@ import PropTypes from 'prop-types';
 
 const getNodeLabel = (node) => last(node.path.split('/'));
 
+const TreeNode = (props) => {
+    const { node, getChildNodes, level } = props;
 
-
-export default function TreeNode() {
     return (
-        <div>
-            
-        </div>
+        
     )
 }
+
+export default TreeNode;
