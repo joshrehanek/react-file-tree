@@ -26,6 +26,14 @@ const TreeNode = (props) => {
                     { getNodeLabel(node) }
                 </span>
             </div>
+
+            { node.isOpen && getChildNodes(node).map(childNode => (
+                <TreeNode
+                {...props}
+                node={childNode}
+                level={level + 1}
+                />
+            ))}
         </>
     )
 }
