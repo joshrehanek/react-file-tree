@@ -15,6 +15,12 @@ const TreeNode = (props) => {
                 <div>
                     {node.type === 'folder' && (node.isOpen ? <FaChevronDown /> : <FaChevronRight /> )}
                 </div>
+
+                <div marginRight={10}>
+                    { node.type === 'file' && <FaFile /> }
+                    { node.type === 'folder' && node.isOpen === true && <FaFolderOpen />}
+                    { node.type === 'folder' && !node.isOpen === true && <FaFolder />}
+                </div>
             </div>
         </>
     )
