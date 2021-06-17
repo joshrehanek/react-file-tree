@@ -21,6 +21,10 @@ const TreeNode = (props) => {
                     { node.type === 'folder' && node.isOpen === true && <FaFolderOpen />}
                     { node.type === 'folder' && !node.isOpen === true && <FaFolder />}
                 </div>
+
+                <span role='button'>
+                    { getNodeLabel(node) }
+                </span>
             </div>
         </>
     )
