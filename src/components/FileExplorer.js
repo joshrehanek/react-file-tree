@@ -6,4 +6,11 @@ export default class FileExplorer extends Component {
 state = {
     selectedFile: null;
 };
+
+onSelect = (file) => this.setState({ selectedFile: file });
+
+render() {
+    const { selectedFile } = this.state;
+
+}
 }
