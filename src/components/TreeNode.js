@@ -22,30 +22,32 @@ const styledTreeNode = styled.div`
     }
     `;
 
-    
+    const NodeIcon = styled.div`
+    font-size: 12px;
+    margin-right: ${props => props.marginRight ? props.marginRight : 5}px`;
 
 const getNodeLabel = (node) => last(node.path.split('/'));
 
 const TreeNode = (props) => {
-    const { node, getChildNodes, level } = props;
+    const { node, getChildNodes, level, onToggle, onNodeSelect } = props;
 
     return (
         <>
-            <div level={level} type={node.type}>
-                <div>
+            <styledTreeNode level={level} type={node.type}>
+                <NodeIcon onClick={() => onToggle(node)}>
                     {node.type === 'folder' && (node.isOpen ? <FaChevronDown /> : <FaChevronRight /> )}
-                </div>
+                </NodeIcon>
 
-                <div marginRight={10}>
+                <NodeIcon marginRight={10}>
                     { node.type === 'file' && <FaFile /> }
                     { node.type === 'folder' && node.isOpen === true && <FaFolderOpen />}
                     { node.type === 'folder' && !node.isOpen === true && <FaFolder />}
-                </div>
+                </NodeIcon>
 
-                <span role='button'>
+                <span role='button' onClick={() => onNodeSelect(node)}>
                     { getNodeLabel(node) }
                 </span>
-            </div>
+            </styledTreeNode>
 
             { node.isOpen && getChildNodes(node).map(childNode => (
                 <TreeNode
