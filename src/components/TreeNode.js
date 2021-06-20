@@ -10,6 +10,20 @@ const getPaddingLeft = (level, type) => {
     return paddingLeft;
 }
 
+const styledTreeNode = styled.div`
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 8px;
+    padding-left: ${props => getPaddingLeft(props.level, props.type)}px;
+
+    &:hover {
+        background: lightgray;
+    }
+    `;
+
+    
+
 const getNodeLabel = (node) => last(node.path.split('/'));
 
 const TreeNode = (props) => {
