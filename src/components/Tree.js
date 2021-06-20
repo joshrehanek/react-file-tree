@@ -74,6 +74,7 @@ export default class Tree extends Component {
                     <TreeNode
                         node={node}
                         getChildNodes={this.getChildNodes}
+                        onToggle={this.onToggle}
                     />
                 ))}
             </>
