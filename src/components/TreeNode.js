@@ -10,7 +10,7 @@ const getPaddingLeft = (level, type) => {
     return paddingLeft;
 }
 
-const styledTreeNode = styled.div`
+const StyledTreeNode = styled.div`
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -33,7 +33,7 @@ const TreeNode = (props) => {
 
     return (
         <>
-            <styledTreeNode level={level} type={node.type}>
+            <StyledTreeNode level={level} type={node.type}>
                 <NodeIcon onClick={() => onToggle(node)}>
                     {node.type === 'folder' && (node.isOpen ? <FaChevronDown /> : <FaChevronRight /> )}
                 </NodeIcon>
@@ -47,7 +47,7 @@ const TreeNode = (props) => {
                 <span role='button' onClick={() => onNodeSelect(node)}>
                     { getNodeLabel(node) }
                 </span>
-            </styledTreeNode>
+            </StyledTreeNode>
 
             { node.isOpen && getChildNodes(node).map(childNode => (
                 <TreeNode
