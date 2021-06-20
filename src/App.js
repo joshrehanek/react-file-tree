@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import FileExplorer from './components/FileExplorer'
-import TreeNode from './components/TreeNode'
+import Tree from './components/Tree'
 
 class App extends Component {
   render() {
@@ -11,7 +11,7 @@ class App extends Component {
           <h1 className="App-title">Fun With File Trees</h1>
         </header>
         <div className="App-intro">
-          <TreeNode />
+          <Tree />
         </div>
       </div>
     );
