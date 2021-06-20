@@ -4,6 +4,12 @@ import styled from 'styled-components';
 import last from 'lodash/last';
 import PropTypes from 'prop-types';
 
+const getPaddingLeft = (level, type) => {
+    let paddingLeft = level * 20;
+    if (type === 'file') paddingLeft += 20;
+    return paddingLeft;
+}
+
 const getNodeLabel = (node) => last(node.path.split('/'));
 
 const TreeNode = (props) => {
