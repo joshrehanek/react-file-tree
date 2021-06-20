@@ -9,18 +9,29 @@ const StyledFileExplorer = styled.div`
   display: flex;  
 `;
 
+const TreeWrapper = styled.div`
+  width: 250px;
+`;
+
 export default class FileExplorer extends Component {
-state = {
-    selectedFile: null;
-};
+    state = {
+        selectedFile: null;
+    };
 
-onSelect = (file) => this.setState({ selectedFile: file });
+    onSelect = (file) => this.setState({ selectedFile: file });
 
-render() {
-    const { selectedFile } = this.state;
+    render() {
+        const { selectedFile } = this.state;
 
-    return (
-        
-    )
-}
+        return (
+            <StyledFileExplorer>
+                <TreeWrapper>
+                    <Tree onSelect={this.onSelect} />
+                </TreeWrapper>
+                <div>
+                    {selectedFile && selectedFile.type === 'file' && selectedFile.content}
+                </div>
+            </StyledFileExplorer>
+        )
+    }
 }
