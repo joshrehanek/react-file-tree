@@ -60,6 +60,12 @@ export default class Tree extends Component {
         return node.children.map(path => nodes[path]);
     }
 
+     onToggle = (node) => {
+         const { nodes } = this.state;
+         nodes[node.path].isOpen = !node.isOpen;
+         this.setState({ nodes });
+     }
+
     render() {
         const rootNodes = this.getRootNodes();
         return (
