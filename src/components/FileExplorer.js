@@ -15,7 +15,7 @@ const TreeWrapper = styled.div`
 
 export default class FileExplorer extends Component {
     state = {
-        selectedFile: null;
+        selectedFile: null,
     };
 
     onSelect = (file) => this.setState({ selectedFile: file });
