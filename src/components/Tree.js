@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import values from 'lodash/values';
+import PropTypes from 'prop-types';
 import TreeNode from './TreeNode';
 
 
@@ -80,4 +81,8 @@ export default class Tree extends Component {
             </>
         )
     }
+}
+
+Tree.propTypes = {
+    onSelect: PropTypes.func.isRequired,
 }
